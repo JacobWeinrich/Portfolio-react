@@ -13,7 +13,7 @@ export default function SkillsSection() {
         <div className="container">
           <div className="row gx-4 gx-lg-5 justify-content-center">
             <div className="col-3">
-            <FontAwesomeIcon icon={fab} />
+            {/* <FontAwesomeIcon icon={fab} /> */}
             </div>
             <div className="col-3"></div>
             <div className="col-3"></div>
