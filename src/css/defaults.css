@@ -1,0 +1,26 @@
+nav {
+    background-color: rgba(0, 0, 0, 0.838);
+    background-image: url("../../public/imgs/background-texture-1.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-blend-mode: color-burn;
+    border-bottom: 2px solid rgb(35, 161, 7);
+}
+
+.page-section {
+  padding: 8rem 1rem;
+}
+
+
+.text-shadow-1 {
+  
+  text-shadow: 4px 4px 7px rgba(0, 0, 0, 0.6);
+}
+
+.text-color-lime-green {
+    color: rgb(0, 255, 0);
+}
+
+.text-color-dark-green {
+color: rgb(0, 183, 0);
+}
