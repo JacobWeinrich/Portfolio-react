@@ -24,3 +24,7 @@ nav {
 .text-color-dark-green {
 color: rgb(0, 183, 0);
 }
+
+.nav-img {
+  width: 5rem;
+}

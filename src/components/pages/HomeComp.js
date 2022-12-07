@@ -7,6 +7,7 @@ function CompHome() {
     <>
       <ContactSection />
       <SkillsSection />
+      
     </>
   );
 }

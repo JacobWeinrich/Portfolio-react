@@ -1,8 +1,6 @@
 import React from "react";
 import "../../../css/defaults.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-// import { fab } from '@fortawesome/free-brands-svg-icons'
+
 export default function SkillsSection() {
   return (
     <>
@@ -11,13 +9,38 @@ export default function SkillsSection() {
         className="page-section section-t2 text-white text-center"
       >
         <div className="container">
+          <h2 className="display-4 fw-semibold">Skills</h2>
           <div className="row gx-4 gx-lg-5 justify-content-center">
-            <div className="col-3">
-            {/* <FontAwesomeIcon icon={fab} /> */}
+            <div className="col-2">
+              <span className="text-shadow-1 display-3">
+                <i className="fa-brands fa-html5"></i>
+              </span>
+              <h2>HTML</h2>
             </div>
-            <div className="col-3"></div>
-            <div className="col-3"></div>
-            <div className="col-3"></div>
+            <div className="col-2">
+              <span className="text-shadow-1 display-3">
+                <i className="fa-brands fa-css3-alt"></i>
+              </span>
+              <h2>CSS</h2>
+            </div>
+            <div className="col-2">
+              <span className="text-shadow-1 display-3">
+                <i className="fa-brands fa-js"></i>
+              </span>
+              <h2>JavaScript</h2>
+            </div>
+            <div className="col-2">
+              <span className="text-shadow-1 display-3">
+                <i className="fa-brands fa-react"></i>
+              </span>
+              <h2>React JS</h2>
+            </div>
+            <div className="col-2">
+              <span className="text-shadow-1 display-3">
+                <i className="fa-brands fa-node"></i>
+              </span>
+              <h2>Node JS</h2>
+            </div>
           </div>
         </div>
       </section>

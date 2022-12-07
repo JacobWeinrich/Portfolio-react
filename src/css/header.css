@@ -1,0 +1,21 @@
+.section-header {
+  background-color: rgba(6, 39, 22, 0.521);
+  background-image: url("../../public/imgs/background-texture-3.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-blend-mode: color-burn;
+  border-bottom: 2px solid rgb(35, 161, 7);
+
+  padding: 8rem 1rem;
+}
+
+.header-img {
+    width:  12rem;
+    box-shadow: 10px 10px 62px -3px rgba(1,255,0,0.75);
+    -webkit-box-shadow: 10px 10px 62px -3px rgba(1,255,0,0.75);
+    -moz-box-shadow: 10px 10px 62px -3px rgba(1,255,0,0.75);
+}
+
+.header-img-2 {
+    width: 10rem;
+}

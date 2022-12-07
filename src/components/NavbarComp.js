@@ -7,7 +7,7 @@ function navbarComp() {
       <nav className="navbar navbar-dark navbar-expand-lg  sticky-top">
         <div className="container-fluid">
           <NavLink className={"navbar-brand fw-bold"} to={"/"}>
-            SEG
+            <img className="nav-img" src="./imgs/logo.png" alt="" />
           </NavLink>
           <button
             className="navbar-toggler"
@@ -28,13 +28,13 @@ function navbarComp() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className={"nav-link"} to={"/photos"}>
-                  photos
+                <NavLink className={"nav-link"} to={"/projects"}>
+                  Projects
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className={"nav-link"} to={"/products"}>
-                  Products
+                <NavLink className={"nav-link"} to={"/resume"}>
+                  Resume
                 </NavLink>
               </li>
             </ul>

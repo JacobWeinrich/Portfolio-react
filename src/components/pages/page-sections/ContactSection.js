@@ -1,7 +1,5 @@
 import React from "react";
 import "../../../css/defaults.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 function ContactSection() {
   return (
@@ -16,12 +14,12 @@ function ContactSection() {
           </h2>
           <h3 className="text-shadow-1">
             <span className="text-color-dark-green">
-              <FontAwesomeIcon icon={faPhone} />
+              <i class="fa-solid fa-phone"></i>
             </span>
             &nbsp;314-939-9335
             <br />
             <span className="text-color-dark-green">
-              <FontAwesomeIcon icon={faEnvelope} />
+              <i className="fa-solid fa-envelope" />
             </span>
             &nbsp; Jacobw@segotw.com
           </h3>
