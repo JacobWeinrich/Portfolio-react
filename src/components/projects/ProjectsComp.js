@@ -21,6 +21,7 @@ function ProjectsComp() {
             className="btn btn-secondary"
             href="http://jacobw.segotw.com/project-examples/college-work/midterm/pages/index.html"
             target="_blank"
+            rel="noreferrer"
           >
             <span className="text-shadow-1 display-4">
               <i class="fa-solid fa-person-running"></i>
