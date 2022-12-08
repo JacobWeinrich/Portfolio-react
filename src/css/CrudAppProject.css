@@ -1,0 +1,12 @@
+.section-t2 {
+    background-color: rgba(0, 0, 0, 0.84);
+    background-image: url("../../public/imgs/background-texture-2.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-blend-mode: color-burn;
+    border-bottom: 2px solid rgb(35, 161, 7);
+  }
+  .text-shadow-1 {
+  
+    text-shadow: 4px 4px 7px rgba(0, 0, 0, 0.6);
+  }
