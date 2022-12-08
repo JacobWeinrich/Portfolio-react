@@ -28,7 +28,7 @@ function CrudAppComp() {
 
   useEffect(() => {
     updateSearchArray([...students]);
-  }, []);
+  },[students]);
 
   function addStudent() {
     console.log("Student Added");
