@@ -23,25 +23,37 @@ function CrudAppComp() {
   const [searchBar, updateSearchBar] = useState("SearchOff");
   const [searchBarInput, updatedSearchBarInput] = useState("");
   const [SearchArray, updateSearchArray] = useState(null);
-
-
-
+  const [editMode, setEditMode] = useState({ editMode: false, index: null });
+  const [editBTN, setEditBTN] = useState(
+    <i className="fa-solid fa-user-plus"></i>
+  );
   useEffect(() => {
     updateSearchArray([...students]);
-  },[students]);
+  }, [students]);
 
   function addStudent() {
-    console.log("Student Added");
-    const newStudent = {
-      firstName: firstName,
-      lastName: lastName,
-      gradYear: gradYear,
-      id: nanoid(),
-    };
-    const updatedStudents = [...students, newStudent];
-    updateStudents(updatedStudents);
-    updateSearchArray(updatedStudents);
-    // search();
+    if (editMode.editMode) {
+      let editedStudent = students
+      editedStudent[editMode.index].firstName = firstName
+      editedStudent[editMode.index].lastName = lastName
+      editedStudent[editMode.index].gradYear = gradYear
+      updateStudents(editedStudent);
+      updateSearchArray(editedStudent);
+      setEditMode({ editMode: false, index: null })
+      setEditBTN(<i className="fa-solid fa-user-plus"></i>)
+    } else {
+      console.log("Student Added");
+      const newStudent = {
+        firstName: firstName,
+        lastName: lastName,
+        gradYear: gradYear,
+        id: nanoid(),
+      };
+      const updatedStudents = [...students, newStudent];
+      updateStudents(updatedStudents);
+      updateSearchArray(updatedStudents);
+      // search();
+    }
   }
 
   function search() {
@@ -94,7 +106,7 @@ function CrudAppComp() {
 
   return (
     <div className="section-t2 min-vh-100 text-white text-shadow-1 p-5">
-      <h1>{searchBar} Test</h1>
+      {/* <h1>{searchBar} Test</h1> */}
       <div className="container">
         <div className="row justify-content-center text-center">
           <h2>Crud App</h2>
@@ -148,7 +160,7 @@ function CrudAppComp() {
           </div>
           <div className="col-2 align-self-start">
             <button className="btn btn-lg btn-primary" onClick={addStudent}>
-              <i className="fa-solid fa-user-plus"></i>
+              {editBTN}
             </button>
           </div>
           <div className="col-2 align-self-start">
@@ -159,15 +171,8 @@ function CrudAppComp() {
               placeholder="Search Bar"
               disabled
               onChange={(evt) => {
-
-
-            
-
                 updatedSearchBarInput(evt.currentTarget.value);
                 search();
-
-
-
               }}
             />
           </div>
@@ -183,7 +188,7 @@ function CrudAppComp() {
                 id="FirstNameSearch"
                 value="FirstName"
                 onClick={(evt) => {
-                  document.getElementById("searchBarInput").disabled = false
+                  document.getElementById("searchBarInput").disabled = false;
                   updateSearchBar(evt.currentTarget.value);
                   search();
                 }}
@@ -201,7 +206,7 @@ function CrudAppComp() {
                 id="LastNameSearch"
                 value="LastName"
                 onClick={(evt) => {
-                  document.getElementById("searchBarInput").disabled = false
+                  document.getElementById("searchBarInput").disabled = false;
                   updateSearchBar(evt.currentTarget.value);
                   search();
                 }}
@@ -218,7 +223,7 @@ function CrudAppComp() {
                 id="GradYearSearch"
                 value="GradYear"
                 onClick={(evt) => {
-                  document.getElementById("searchBarInput").disabled = false
+                  document.getElementById("searchBarInput").disabled = false;
                   updateSearchBar(evt.currentTarget.value);
                   search();
                 }}
@@ -236,7 +241,7 @@ function CrudAppComp() {
                 value="SearchOff"
                 defaultChecked
                 onClick={(evt) => {
-                  document.getElementById("searchBarInput").disabled = true
+                  document.getElementById("searchBarInput").disabled = true;
                   updateSearchBar(evt.currentTarget.value);
                   updateSearchArray(students);
                   // search();
@@ -256,6 +261,22 @@ function CrudAppComp() {
                   {student.firstName} {student.lastName}
                 </h3>
                 <h3>Grad Year: {student.gradYear}</h3>
+                <button
+                  className="btn btn-primary"
+                  onClick={(evt) => {
+                    console.log(students.indexOf(student));
+                    setFirstName(students[students.indexOf(student)].firstName);
+                    setGradYear(students[students.indexOf(student)].gradYear);
+                    setLastName(students[students.indexOf(student)].lastName);
+                    setEditMode({
+                      editMode: true,
+                      index: students.indexOf(student),
+                    });
+                    setEditBTN(<i className="fa-solid fa-user-pen"></i>);
+                  }}
+                >
+                  <i className="fa-solid fa-pencil"></i>
+                </button>
                 <button
                   className="btn btn-danger"
                   onClick={(evt) => {

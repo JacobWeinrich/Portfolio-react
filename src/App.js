@@ -5,8 +5,9 @@ import NavbarComp from "./components/NavbarComp";
 import HomeComp from "./components/pages/HomeComp";
 import HeaderComp from "./components/HeaderComp";
 import FooterComp from "./components/FooterComp";
-import ProjectsComp from "./components/projects/ProjectsComp";
 import CrudAppComp from "./components/projects/CrudApp/CrudAppComp";
+import ProjectsComp from "./components/projects/ProjectsComp";
+import ResumeComp from "./components/pages/ResumeCop";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <HeaderComp />
       <Routes>
         <Route path="/" element={<HomeComp />} />
+        <Route path="/resume" element={<ResumeComp />} />
         <Route path="/projects" element={<ProjectsComp />} />
         <Route path="/project-crudApp" element={<CrudAppComp />} />
       </Routes>

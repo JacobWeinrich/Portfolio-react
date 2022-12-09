@@ -4,8 +4,9 @@ import { NavLink } from "react-router-dom";
 function ProjectsComp() {
   return (
     <div className="container text-white min-vh-100">
-      <div className="row p-4">
-        <div className="col-4 text-center">
+      <div className="row p-4 justify-content-center text-center">
+        <h2 className="display-3 fw-bold">PROJECTS</h2>
+        <div className="col-4 text-center ">
           <NavLink
             className={"navbar-brand fw-bold btn btn-secondary"}
             to={"/project-crudApp"}
@@ -29,7 +30,7 @@ function ProjectsComp() {
             <h2>Law Day Run</h2>
           </a>
         </div>
-        <div className="col-4"></div>
+        {/* <div className="col-4"></div> */}
       </div>
     </div>
   );

@@ -8,16 +8,15 @@ function HeaderComp() {
       <section className="section-header text-white text-shadow-1">
         <div className="container">
           <div className="row d-flex justify-content-center">
-            
-            <div className="col-12 d-flex justify-content-center">
-              <div className="p-5">
-              <img
-                className="header-img"
-                src="./imgs/profile-pic.jpg"
-                alt="Jacob Weinrich Profile Pic"
-              />
-            </div>
-              <div>
+            <div className="row d-flex justify-content-center">
+              <div className="p-5 col-lg-6 col-12">
+                <img
+                  className="header-img img-fluid"
+                  src="./imgs/profile-pic.jpg"
+                  alt="Jacob Weinrich Profile Pic"
+                />
+              </div>
+              <div className="col-12 col-lg-6">
                 <img className="header-img-2" src="./imgs/logo.png" alt="" />
                 <h2 className="fs-2">Hello my name is Jacob Weinrich</h2>
                 <p className="fs-5">
