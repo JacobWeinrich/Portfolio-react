@@ -1,6 +1,8 @@
 import React from "react";
 import "../../../css/defaults.css";
 
+import { Form } from '@formio/react';
+
 function ContactSection() {
   return (
     <section
@@ -25,6 +27,7 @@ function ContactSection() {
           </h3>
         </div>
       </div>
+      <Form src="https://ghjhqoceuxoclqt.form.io/contactform" />
     </section>
   );
 }
