@@ -27,20 +27,36 @@ function CrudAppComp() {
   const [editBTN, setEditBTN] = useState(
     <i className="fa-solid fa-user-plus"></i>
   );
+
+  function saveToLocal(student2) {
+    if (localStorage) {
+      localStorage.setItem("students", JSON.stringify(student2));
+    }
+  }
+
   useEffect(() => {
-    updateSearchArray([...students]);
-  }, [students]);
+    if (localStorage) {
+      const studentsLS = JSON.parse(localStorage.getItem("students"));
+      if (studentsLS) {
+        updateStudents(studentsLS);
+        updateSearchArray(studentsLS);
+      } else {
+        updateSearchArray(students);
+      }
+    }
+  }, []);
 
   function addStudent() {
     if (editMode.editMode) {
-      let editedStudent = students
-      editedStudent[editMode.index].firstName = firstName
-      editedStudent[editMode.index].lastName = lastName
-      editedStudent[editMode.index].gradYear = gradYear
+      let editedStudent = students;
+      editedStudent[editMode.index].firstName = firstName;
+      editedStudent[editMode.index].lastName = lastName;
+      editedStudent[editMode.index].gradYear = gradYear;
       updateStudents(editedStudent);
       updateSearchArray(editedStudent);
-      setEditMode({ editMode: false, index: null })
-      setEditBTN(<i className="fa-solid fa-user-plus"></i>)
+      setEditMode({ editMode: false, index: null });
+      setEditBTN(<i className="fa-solid fa-user-plus"></i>);
+      saveToLocal(editedStudent);
     } else {
       console.log("Student Added");
       const newStudent = {
@@ -53,7 +69,9 @@ function CrudAppComp() {
       updateStudents(updatedStudents);
       updateSearchArray(updatedStudents);
       // search();
+      saveToLocal(updatedStudents);
     }
+    
   }
 
   function search() {
@@ -287,6 +305,7 @@ function CrudAppComp() {
                     // search();
                     updateSearchArray(filtered);
                     console.log(students);
+                    saveToLocal(filtered)
                   }}
                 >
                   <i className="fa-solid fa-trash"></i>
