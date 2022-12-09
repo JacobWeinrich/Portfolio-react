@@ -44,7 +44,7 @@ function CrudAppComp() {
         updateSearchArray(students);
       }
     }
-  }, []);
+  }, [students]);
 
   function addStudent() {
     if (editMode.editMode) {
