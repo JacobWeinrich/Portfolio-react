@@ -38,6 +38,7 @@ useEffect(() => {
 const studentsLS = JSON.parse(localStorage.getItem("students"));
       if (studentsLS) {
         updateStudents(studentsLS);
+        updateSearchArray(studentsLS)
       }
 }, []);
 

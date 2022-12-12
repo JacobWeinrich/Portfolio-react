@@ -18,7 +18,7 @@ function App() {
         <Route path="/" element={<HomeComp />} />
         <Route path="/resume" element={<ResumeComp />} />
         <Route path="/projects" element={<ProjectsComp />} />
-        <Route path="/project-crudApp" element={<CrudAppComp />} />
+        <Route path="/crudApp" element={<CrudAppComp />} />
       </Routes>
       <FooterComp />
     </div>
