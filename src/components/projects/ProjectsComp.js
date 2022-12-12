@@ -9,7 +9,7 @@ function ProjectsComp() {
         <div className="col-4 text-center ">
           <NavLink
             className={"navbar-brand fw-bold btn btn-secondary"}
-            to={"/project-crudApp"}
+            to={"/crudApp"}
           >
             <span className="text-shadow-1 display-3">
               <i className="fa-brands fa-react"></i>
