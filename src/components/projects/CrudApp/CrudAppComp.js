@@ -34,16 +34,17 @@ function CrudAppComp() {
     }
   }
 
-useEffect(() => {
-const studentsLS = JSON.parse(localStorage.getItem("students"));
-      if (studentsLS) {
-        updateStudents(studentsLS);
-        updateSearchArray(studentsLS)
-      }
-}, []);
+  useEffect(() => {
+    const studentsLS = JSON.parse(localStorage.getItem("students"));
+    if (studentsLS) {
+      updateStudents(studentsLS);
+      updateSearchArray(studentsLS);
+    }
+  }, []);
 
   useReducer(() => {
     updateSearchArray(students);
+    search();
   });
 
   function addStudent() {
@@ -71,11 +72,13 @@ const studentsLS = JSON.parse(localStorage.getItem("students"));
       // search();
       saveToLocal(updatedStudents);
     }
-    
   }
 
   function search() {
-    if (searchBar === "FirstName") {
+    if (searchBarInput.length === 0) {
+      updateSearchArray(students);
+    }
+    if (searchBar === "FirstName" && searchBarInput.length !== 0) {
       updateSearchArray(
         students.filter((item) =>
           item.firstName
@@ -83,8 +86,7 @@ const studentsLS = JSON.parse(localStorage.getItem("students"));
             .includes(searchBarInput.toLocaleLowerCase())
         )
       );
-      
-    } else if (searchBar === "LastName") {
+    } else if (searchBar === "LastName" && searchBarInput.length !== 0) {
       updateSearchArray(
         students.filter((item) =>
           item.lastName
@@ -93,7 +95,7 @@ const studentsLS = JSON.parse(localStorage.getItem("students"));
         )
       );
       console.log(SearchArray);
-    } else if (searchBar === "GradYear") {
+    } else if (searchBar === "GradYear" && searchBarInput.length !== 0) {
       updateSearchArray(
         students.filter((item) =>
           item.gradYear
@@ -102,24 +104,13 @@ const studentsLS = JSON.parse(localStorage.getItem("students"));
         )
       );
       console.log(SearchArray);
-    } else if (searchBar === "SearchOff") {
-      console.log(searchBar);
+    } else if (searchBarInput.length === 0 || searchBar === "SearchOff") {
+      console.log(students);
       updateSearchArray(students);
       console.log(SearchArray);
+      console.log("hi");
       // document.querySelector("#searchBarInput")
     }
-
-    // if (SearchArray.length === 0) {
-    //   updateSearchArray([
-    //     {
-    //       firstName: "No Results",
-    //       lastName: "No Results",
-    //       gradYear: "No Results",
-    //       id: nanoid(),
-    //     },
-    //   ]);
-    //   console.log("no results");
-    // }
   }
 
   return (
@@ -189,8 +180,14 @@ const studentsLS = JSON.parse(localStorage.getItem("students"));
               placeholder="Search Bar"
               disabled
               onChange={(evt) => {
+                if (evt.currentTarget.value === "") {
+                  console.log("empty");
+                  updateSearchArray(students)
+                } else {
+
+                }
                 updatedSearchBarInput(evt.currentTarget.value);
-                search();
+                search()
               }}
             />
           </div>
@@ -305,7 +302,7 @@ const studentsLS = JSON.parse(localStorage.getItem("students"));
                     // search();
                     updateSearchArray(filtered);
                     console.log(students);
-                    saveToLocal(filtered)
+                    saveToLocal(filtered);
                   }}
                 >
                   <i className="fa-solid fa-trash"></i>
