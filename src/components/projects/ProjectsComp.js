@@ -20,7 +20,7 @@ function ProjectsComp() {
         <div className="col-4">
           <a
             className="btn btn-secondary"
-            href="http://jacobw.segotw.com/project-examples/college-work/midterm/pages/index.html"
+            href="http://jacobw.segotw.com/project-examples/college-work/midterm/index.html"
             target="_blank"
             rel="noreferrer"
           >
