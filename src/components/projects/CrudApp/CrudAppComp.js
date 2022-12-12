@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../../../css/CrudAppProject.css";
 import { nanoid } from "nanoid";
 function CrudAppComp() {
@@ -34,16 +34,16 @@ function CrudAppComp() {
     }
   }
 
-  useReducer(() => {
-    if (localStorage) {
-      const studentsLS = JSON.parse(localStorage.getItem("students"));
+useEffect(() => {
+const studentsLS = JSON.parse(localStorage.getItem("students"));
       if (studentsLS) {
         updateStudents(studentsLS);
         updateSearchArray(studentsLS);
-      } else {
-        updateSearchArray(students);
       }
-    }
+}, []);
+
+  useReducer(() => {
+    updateSearchArray(students);
   });
 
   function addStudent() {
