@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "../../../css/CrudAppProject.css";
 import { nanoid } from "nanoid";
 function CrudAppComp() {
