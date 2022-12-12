@@ -182,12 +182,11 @@ function CrudAppComp() {
               onChange={(evt) => {
                 if (evt.currentTarget.value === "") {
                   console.log("empty");
-                  updateSearchArray(students)
+                  updateSearchArray(students);
                 } else {
-
                 }
                 updatedSearchBarInput(evt.currentTarget.value);
-                search()
+                search();
               }}
             />
           </div>
@@ -310,6 +309,17 @@ function CrudAppComp() {
               </div>
             ))}
         </div>
+      </div>
+      <div className="text-center mt-5">
+        <iframe
+          width="500rem"
+          height="315rem"
+          src="https://www.youtube.com/embed/GAB2srqZvbY"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
       </div>
     </div>
   );
