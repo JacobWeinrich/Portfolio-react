@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useReducer } from "react";
 import { useState, useEffect } from "react";
 import "../../../css/CrudAppProject.css";
 import { nanoid } from "nanoid";
@@ -34,7 +34,7 @@ function CrudAppComp() {
     }
   }
 
-  useEffect(() => {
+  useReducer(() => {
     if (localStorage) {
       const studentsLS = JSON.parse(localStorage.getItem("students"));
       if (studentsLS) {
@@ -44,7 +44,7 @@ function CrudAppComp() {
         updateSearchArray(students);
       }
     }
-  }, [students]);
+  });
 
   function addStudent() {
     if (editMode.editMode) {
@@ -83,7 +83,7 @@ function CrudAppComp() {
             .includes(searchBarInput.toLocaleLowerCase())
         )
       );
-      console.log(SearchArray);
+      
     } else if (searchBar === "LastName") {
       updateSearchArray(
         students.filter((item) =>
